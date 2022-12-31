@@ -60,11 +60,11 @@ The attrition results are are at [results/attrition.json](results/attrition.json
 To aid analysis, collate all `script` definitions in all collected
 `composer.json` files by package name and script name.
 
-The collated results indicate that of the 229555 packages collected:
+The collated results indicate that of the 229662 packages collected:
 
 - 41036 packages define at least one script (including Composer event scripts);
 
-- 36521 packages define at least one non-event scripts.
+- 36521 packages define at least one non-event script.
 
 The results are at [results/collated.json](results/collated.json).
 
@@ -260,7 +260,7 @@ Other or uncategorized:
 - `upload-coverage` -- uploads test coverage files
 - `coveralls` -- uploads test coverage files
 
-## Recommendation
+## Initial Recommendation
 
 ### Script Names
 
@@ -279,7 +279,7 @@ name. Thus:
 
 Notes:
 
-1.  E.g.:`test-integration`, `test-system`, `test-filter`, `test-behavior`, etc.
+1.  E.g.: `test-integration`, `test-system`, `test-filter`, `test-behavior`, etc.
 
 2.  This allows for both British and American English common usage.
 
@@ -298,3 +298,31 @@ custom Composer scripts.
 
 Thus, this document recommends that script names MUST use all lower-case, with
 dashes (not colons or underscores) as word separators.
+
+## Review
+
+### Private Review
+
+None of the six private reviewers noted faults with the methodology. There were two observations regarding the data itself:
+
+- One reviewer observed how few packages use non-event scripts. Of 229662 packages, only 36521 (15%) define at least one non-event script. (This reviewer also opined that using `make` is a superior alternative to using a package manager to run scripts.)
+
+- One reviewer observed the increased attrition rate from the previous PDS publication (pds/skeleton).  The prior attrition rate was 8.5%, whereas the rate here is 34.5%.
+
+There were two objections to the initial recommendation:
+
+- One reviewer objected to including `check` as the recommended script name for running two or more QA tools in sequence, due to its low absolute frequency (1899 uses out of 36521 script names, or about 5%).
+
+- One reviewer objected to using `MUST` regarding dashes as word separators in the naming convention. The reviewer felt `SHOULD` was more appropriate, in deference to the Symfony practice of using colons as separators in some cases.
+
+No other objections to the initial recommendation were raised by the private reviewers.
+
+Finally, the reviewers indicated some drafting errors, such as typos.
+
+### Public Review
+
+TBD.
+
+## Final Recommendation
+
+TBD.
